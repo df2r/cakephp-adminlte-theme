@@ -289,17 +289,24 @@ use Cake\Core\Configure; ?>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <?php 
-                        //echo $this->Html->image('user2-160x160.jpg', array('class' => 'user-image', 'alt' => 'User Image')); 
-                        echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                        
+                        if (isset($User["image"])) {                 
+							echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                        } else {
+							echo $this->Html->image('user2-160x160.jpg', array('class' => 'user-image', 'alt' => 'User Image')); 
+						}
                         ?>
-                        <span class="hidden-xs"><?php echo $User["name"]; ?></span>
+                        <span class="hidden-xs"><?php echo $User["name"] ?? 'No user name'; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <?php 
-                            //echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); 
-                            echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+							if (isset($User["image"])) {
+								echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                            } else {
+								echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); 
+							}
                             ?>
                         </li>
                         <!-- Menu Body -->

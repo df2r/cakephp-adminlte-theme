@@ -1,4 +1,8 @@
-<?php if ($User["username"] == "admin") : ?>
+<?php $isAdmin = isset($User["username"]) && $User["username"] == "admin" ? true : false ?>
+
+
+
+<?php if ($isAdmin) : ?>
 
 <button type="button" onclick="$('#f2r_debug_side').toggle();">Debug</button>
 <div id="f2r_debug_side" style="display: none;">
@@ -7,19 +11,20 @@
         print_r([
             "f2r@debug",
             "identity"=>$this->request->getAttribute('identity'),
-            "User"=>$User,
-            $UserMenu,
-            $globalMenus,
+            "User"=>$User ?? [],
+            $UserMenu ?? [],
+            $globalMenus ?? [],
         ])
         ?>
 
     </pre>
 </div>
+
 <?php endif; ?>
 
 <!-- https://www.w3schools.com/icons/fontawesome_icons_webapp.asp -->
 
-<?php if ($User["username"] == "admin") : ?>
+<?php if ($isAdmin) : ?>
 <!-- not available -->
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header"></li>
@@ -37,6 +42,7 @@
 
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header"></li>
+    <?php if (isset($globalMenus) && is_array($globalMenus)): ?>
     <?php foreach ($globalMenus as $menu): ?>
         <li class="treeview">
             <a href="#"><i class="fa fa-dashboard"></i> <span><?php echo $menu["title"]; ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
@@ -47,6 +53,7 @@
             </ul>
         </li>
     <?php endforeach; ?>
+    <?php endif; ?>
 </ul>
 
 
