@@ -3,10 +3,9 @@
   <div class="container">
   <?php endif; ?>
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.5
+      <b>Version</b> 2.0.1
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2022-<?= date("Y");?> <a href="https://evidenciasenpediatria.es">Evidencias en Pediatria</a>.</strong> All rights reserved.
   <?php if (isset($layout) && $layout == 'top'): ?>
   </div>
   <?php endif; ?>
