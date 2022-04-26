@@ -422,7 +422,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -513,7 +513,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -605,7 +605,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -696,7 +696,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -799,7 +799,7 @@
           <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username">Alexander Pierce</h3>
+              <h3 class="widget-user-username">Felipe Fernandez</h3>
               <h5 class="widget-user-desc">Founder &amp; CEO</h5>
             </div>
             <div class="widget-user-image">

@@ -1,67 +1,63 @@
-<?php $isAdmin = isset($User["username"]) && $User["username"] == "admin" ? true : false ?>
+<?php $isAdmin = isset($User->username) && $User->username == "superadmin" ? true : false ?>
 
 
 
 <?php if ($isAdmin) : ?>
 
-<button type="button" onclick="$('#f2r_debug_side').toggle();">Debug</button>
-<div id="f2r_debug_side" style="display: none;">
+    <button type="button" onclick="$('#f2r_debug_side').toggle();">Debug</button>
+    <div id="f2r_debug_side" style="display: none;">
     <pre>
         <?php
-        print_r([
-            "f2r@debug",
-            "identity"=>$this->request->getAttribute('identity'),
-            "User"=>$User ?? [],
+        debug([
+            "User" => $User ?? [],
             $UserMenu ?? [],
             $globalMenus ?? [],
         ])
         ?>
-
     </pre>
-</div>
+    </div>
 
 <?php endif; ?>
 
 <!-- https://www.w3schools.com/icons/fontawesome_icons_webapp.asp -->
 
 <?php if ($isAdmin) : ?>
-<!-- not available -->
-<ul class="sidebar-menu" data-widget="tree">
-    <li class="header"></li>
+    <!-- not available -->
+    <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"></li>
 
-    <li class="treeview">
-        <a href="#"><i class="fa fa-bookmark"></i> <span>Favorites</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-        <ul class="treeview-menu">
-            <li><a href="<?php echo $this->Url->build('/pages/tables/simple'); ?>"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="<?php echo $this->Url->build('/pages/tables/data'); ?>"><i class="fa fa-circle-o"></i> Data tables</a></li>
-            <li><a href="<?php echo $this->Url->build('/pages/home2'); ?>"><i class="fa fa-circle-o"></i> Item number 2</a></li>
-        </ul>
-    </li>
-</ul>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-bookmark"></i> <span>Favorites</span><span class="pull-right-container"><i
+                            class="fa fa-angle-left pull-right"></i></span></a>
+            <ul class="treeview-menu">
+                <li><a href="<?php echo $this->Url->build('/pages/tables/simple'); ?>"><i class="fa fa-circle-o"></i>
+                        Simple tables</a></li>
+                <li><a href="<?php echo $this->Url->build('/pages/tables/data'); ?>"><i class="fa fa-circle-o"></i> Data
+                        tables</a></li>
+                <li><a href="<?php echo $this->Url->build('/pages/home2'); ?>"><i class="fa fa-circle-o"></i> Item
+                        number 2</a></li>
+            </ul>
+        </li>
+    </ul>
 <?php endif; ?>
 
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header"></li>
     <?php if (isset($globalMenus) && is_array($globalMenus)): ?>
-    <?php foreach ($globalMenus as $menu): ?>
-        <li class="treeview">
-            <a href="#"><i class="fa fa-dashboard"></i> <span><?php echo $menu["title"]; ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-            <ul class="treeview-menu">
-                <?php foreach ($menu["childrens"] as $children): ?>
-                    <li><a href="<?php echo $this->Url->build($children["url"]); ?>"><i class="fa fa-circle-o"></i><?php echo $children["name"]; ?></a></li>
-                        <?php endforeach; ?>
-            </ul>
-        </li>
-    <?php endforeach; ?>
+        <?php foreach ($globalMenus as $menu): ?>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-dashboard"></i> <span><?php echo $menu["title"]; ?></span><span
+                            class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <?php foreach ($menu["childrens"] as $children): ?>
+                        <li><a href="<?php echo $this->Url->build($children["url"]); ?>"><i
+                                        class="fa fa-circle-o"></i><?php echo $children["name"]; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+        <?php endforeach; ?>
     <?php endif; ?>
 </ul>
-
-
-
-
-
-
-
 
 
 <?php
@@ -239,4 +235,4 @@
   <li><a href="<?php echo $this->Url->build('/pages/debug'); ?>"><i class="fa fa-bug"></i> <span>Debug</span></a></li>
   </ul>
  * 
- */?>
+ */ ?>

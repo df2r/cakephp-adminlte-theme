@@ -1,15 +1,14 @@
-<!-- Content Header (Page header) -->
+<!-- Content Header (Page header) f2r@CUSTOM-->
 <section class="content-header">
   <h1>
     Dashboard
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
     <li class="active">Dashboard</li>
   </ol>
 </section>
-
 <!-- Main content -->
 <section class="content">
   <!-- Small boxes (Stat box) -->
@@ -18,29 +17,14 @@
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>150</h3>
+          <h3><?= number_format($globaldata['Dashboard']['TotalArticles'])?></h3>
 
-          <p>New Orders</p>
+          <p>Articulos</p>
         </div>
         <div class="icon">
-          <i class="ion ion-bag"></i>
+          <i class="ion ion-edit"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-          <p>Bounce Rate</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-stats-bars"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="/gestion/todos" class="small-box-footer">Mas informacion <i class="fa fa-arrow-circle-right"></i></a><?php //f2r@TODO go to Articles all?>
       </div>
     </div>
     <!-- ./col -->
@@ -48,14 +32,14 @@
       <!-- small box -->
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>44</h3>
+          <h3><?= number_format($globaldata['Dashboard']['TotalUsers'])?></h3>
 
-          <p>User Registrations</p>
+          <p>Usuarios registrados</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="/gestion/usuarios" class="small-box-footer">Mas informacion <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -65,21 +49,25 @@
         <div class="inner">
           <h3>65</h3>
 
-          <p>Unique Visitors</p>
+          <p>Visitas unicas</p>
         </div>
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
         </div>
-        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="#" class="small-box-footer">Mas informacion <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
   </div>
   <!-- /.row -->
+  
+  
   <!-- Main row -->
   <div class="row">
+	  
     <!-- Left col -->
     <section class="col-lg-7 connectedSortable">
+		<?php /*
       <!-- Custom tabs (Charts with tabs)-->
       <div class="nav-tabs-custom">
         <!-- Tabs within a box -->
@@ -95,8 +83,9 @@
         </div>
       </div>
       <!-- /.nav-tabs-custom -->
-
+*/?>
       <!-- Chat box -->
+      <?php /*
       <div class="box box-success">
         <div class="box-header">
           <i class="fa fa-comments-o"></i>
@@ -146,7 +135,7 @@
             <p class="message">
               <a href="#" class="name">
                 <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                Alexander Pierce
+                Felipe Fernandez
               </a>
               I would like to meet you to discuss the latest news about
               the arrival of the new theme. They say it is going to be one the
@@ -182,7 +171,107 @@
         </div>
       </div>
       <!-- /.box (chat box) -->
+*/?>
 
+      <!-- Notifications -->
+      <div class="box box-primary">
+        <div class="box-header">
+          <i class="ion ion-clipboard"></i>
+
+          <h3 class="box-title">Notifications</h3>
+
+          <div class="box-tools pull-right">
+            <ul class="pagination pagination-sm inline">
+              <li><a href="#">&laquo;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+          <ul class="todo-list">
+            <li>
+              <!-- drag handle -->
+              <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <!-- checkbox -->
+              <input type="checkbox" value="">
+              <!-- todo text -->
+              <span class="text">Design a nice theme</span>
+              <!-- Emphasis label -->
+              <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+              <!-- General tools such as edit or delete-->
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Make the theme responsive</span>
+              <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Let theme shine like a star</span>
+              <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Let theme shine like a star</span>
+              <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Check your messages and notifications</span>
+              <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+
+<?php /*
       <!-- TO DO List -->
       <div class="box box-primary">
         <div class="box-header">
@@ -295,7 +384,10 @@
         </div>
       </div>
       <!-- /.box -->
+*/?>
 
+
+<?php /*
       <!-- quick email widget -->
       <div class="box box-info">
         <div class="box-header">
@@ -329,7 +421,7 @@
             <i class="fa fa-arrow-circle-right"></i></button>
         </div>
       </div>
-
+*/?>
     </section>
     <!-- /.Left col -->
     <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -381,7 +473,7 @@
         </div>
       </div>
       <!-- /.box -->
-
+<?php /*
       <!-- solid sales graph -->
       <div class="box box-solid bg-teal-gradient">
         <div class="box-header">
@@ -429,7 +521,8 @@
         <!-- /.box-footer -->
       </div>
       <!-- /.box -->
-
+*/?>
+<?php /*
       <!-- Calendar -->
       <div class="box box-solid bg-green-gradient">
         <div class="box-header">
@@ -506,7 +599,7 @@
         </div>
       </div>
       <!-- /.box -->
-
+*/?>
     </section>
     <!-- right col -->
   </div>

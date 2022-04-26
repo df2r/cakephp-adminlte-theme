@@ -25,40 +25,41 @@ use Cake\Core\Configure; ?>
 <nav class="navbar navbar-static-top" style="height: 20px;">
 
     <?php if (isset($layout) && $layout == 'top'): ?>
-        <div class="container">
+    <div class="container">
 
-            <div class="navbar-header">
-                <a href="<?php echo $this->Url->build('/'); ?>" class="navbar-brand"><?php echo Configure::read('Theme.logo.large') ?></a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
+        <div class="navbar-header">
+            <a href="<?php echo $this->Url->build('/'); ?>"
+               class="navbar-brand"><?php echo Configure::read('Theme.logo.large') ?></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-                    </div>
-                </form>
-            </div>
-            <!-- /.navbar-collapse -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                </div>
+            </form>
+        </div>
+        <!-- /.navbar-collapse -->
         <?php else: ?>
 
             <!-- Sidebar toggle button-->
@@ -70,7 +71,6 @@ use Cake\Core\Configure; ?>
             </a>
 
         <?php endif; ?>
-
 
 
         <div class="navbar-custom-menu">
@@ -92,7 +92,7 @@ use Cake\Core\Configure; ?>
                                         <div class="pull-left">
                                             <?php
                                             //echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); 
-                                            echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                                            echo $this->Html->image($User->photo, array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
                                             ?>
                                         </div>
                                         <h4>
@@ -157,15 +157,16 @@ use Cake\Core\Configure; ?>
                     </ul>
                 </li>
                  * 
-                 */?>
-                
-                <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">0</span>
-                    </a>
-                    <?php /*
+                 */ ?>
+                <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                <?php if ($User): ?>
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">0</span>
+                        </a>
+                        <?php /*
                     <ul class="dropdown-menu">
                         <li class="header">You have 10 notifications</li>
                         <li>
@@ -202,15 +203,15 @@ use Cake\Core\Configure; ?>
                         <li class="footer"><a href="#">View all</a></li>
                     </ul>
                      * 
-                     */?>
-                </li>
-                <!-- Tasks: style can be found in dropdown.less -->
-                <li class="dropdown tasks-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-flag-o"></i>
-                        <span class="label label-danger">0</span>
-                    </a>
-                    <?php /*
+                     */ ?>
+                    </li>
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <li class="dropdown tasks-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">0</span>
+                        </a>
+                        <?php /*
                     <ul class="dropdown-menu">
                         <li class="header">You have 9 tasks</li>
                         <li>
@@ -283,40 +284,35 @@ use Cake\Core\Configure; ?>
                         </li>
                     </ul>
                      * 
-                     */?>
-                </li>
+                     */ ?>
+                    </li>
+                <?php endif; ?>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php 
-                        
-                        if (isset($User["image"])) {                 
-							echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
-                        } else {
-							echo $this->Html->image('user2-160x160.jpg', array('class' => 'user-image', 'alt' => 'User Image')); 
-						}
+                        <?php
+                        if ($User) {
+                            echo $this->Html->image($User->photo, array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                            echo '<span class="hidden-xs">' . $User->first_name . ' ' . $User->last_name . '</span>';
+                        }
                         ?>
-                        <span class="hidden-xs"><?php echo $User["name"] ?? 'No user name'; ?></span>
+
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <?php 
-							if (isset($User["image"])) {
-								echo $this->Html->image($User["image"], array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
-                            } else {
-								echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); 
-							}
+                            <?php
+                            if ($User) {
+                                echo $this->Html->image($User->photo, array('class' => 'img-circle', 'width' => '30px', 'alt' => 'User Image'));
+                            }
                             ?>
                         </li>
                         <!-- Menu Body -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <?php /* f2r@TODO
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="/profile" class="btn btn-default btn-flat">Profile</a>
                             </div>
-                             */?>
                             <div class="pull-right">
                                 <a href="/users/logout" class="btn btn-default btn-flat">Sign out</a>
                             </div>
@@ -325,16 +321,16 @@ use Cake\Core\Configure; ?>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <?php if (!isset($layout)): ?>
-                <?php /* f2r@TODO
+                    <?php /* f2r@TODO
                     <li>
                         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                     </li>
-                 */?>
+                 */ ?>
                 <?php endif; ?>
             </ul>
         </div>
 
         <?php if (isset($layout) && $layout == 'top'): ?>
-        </div>
-    <?php endif; ?>
+    </div>
+<?php endif; ?>
 </nav>

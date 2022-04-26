@@ -1,9 +1,20 @@
+<?php /*
+* f2r@TODO CUSTOM
+ */?>
 <div class="user-panel">
     <div class="pull-left image">
-        <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); ?>
+        <?php
+        if ($User) {
+            echo $this->Html->image(!empty($User->photo) ? $User->photo : '', array('class' => 'img-circle', 'alt' => 'User Image'));
+        }
+        ?>
     </div>
     <div class="pull-left info">
-        <p>Alexander Pierce</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <p><?php
+            if ($User) {
+                echo $User->first_name . ' ' . $User->last_name;
+            }
+            ?></p>
+        <?php //<a href="#"><i class="fa fa-circle text-success"></i> Online</a>?>
     </div>
 </div>

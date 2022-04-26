@@ -5,7 +5,7 @@
     <small>Version 2.0</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
     <li class="active">Dashboard</li>
   </ol>
 </section>
@@ -285,7 +285,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -315,7 +315,7 @@
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg">
                   <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-name pull-left">Felipe Fernandez</span>
                     <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
                   </div>
                   <!-- /.direct-chat-info -->
@@ -478,7 +478,7 @@
               <ul class="users-list clearfix">
                 <li>
                   <?php echo $this->Html->image('user1-128x128.jpg', array('alt' => 'User Image')); ?>
-                  <a class="users-list-name" href="#">Alexander Pierce</a>
+                  <a class="users-list-name" href="#">Felipe Fernandez</a>
                   <span class="users-list-date">Today</span>
                 </li>
                 <li>
@@ -498,7 +498,7 @@
                 </li>
                 <li>
                   <?php echo $this->Html->image('user2-160x160.jpg', array('alt' => 'User Image')); ?>
-                  <a class="users-list-name" href="#">Alexander</a>
+                  <a class="users-list-name" href="#">Felipe Fernandeza>
                   <span class="users-list-date">13 Jan</span>
                 </li>
                 <li>
